@@ -3,10 +3,10 @@ name: Package Swift Project
 on:
   push:
     branches:
-      - main  # Branch to run SPM
+      - master  # Branch to run SPM
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build:
