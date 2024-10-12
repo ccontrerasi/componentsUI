@@ -31,7 +31,7 @@ jobs:
         let package = Package(
             name: "componentsUI",
             platforms: [
-                .iOS(.v15)
+                .iOS(.v13)
             ],
             products: [
                 .library(
