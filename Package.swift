@@ -18,10 +18,10 @@ let package = Package(
         .target(
             name: "componentsUI",
             dependencies: ["Swinject"],
-            path: "Sources"),
+            path: "Source/componentsUI"),
         .testTarget(
             name: "componentsUITests",
             dependencies: ["componentsUI"],
-            path: "Tests"),
+            path: "Tests/componentsUITests"),
     ]
 )
