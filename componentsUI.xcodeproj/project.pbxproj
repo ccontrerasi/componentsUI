@@ -153,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				899A1F0A2C67A5C600DB8459 /* componentsUI */,
-				899A1F2C2C67A6DB00DB8459 /* SampleApp */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -162,8 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				899A1F162C67A5C600DB8459 /* componentsUITests */,
-				899A1F3D2C67A6DC00DB8459 /* SampleAppTests */,
-				899A1F472C67A6DC00DB8459 /* SampleAppUITests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -171,6 +168,9 @@
 		899A1EFE2C67A5C600DB8459 = {
 			isa = PBXGroup;
 			children = (
+				899A1F2C2C67A6DB00DB8459 /* SampleApp */,
+				899A1F3D2C67A6DC00DB8459 /* SampleAppTests */,
+				899A1F472C67A6DC00DB8459 /* SampleAppUITests */,
 				89521DDF2CBACAFD0097CE3D /* Sources */,
 				89521DE02CBACB0D0097CE3D /* Tests */,
 				899A1F552C67A6F100DB8459 /* Frameworks */,
@@ -728,7 +728,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Sources/SampleApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SampleApp/Preview Content\"";
 				DEVELOPMENT_TEAM = YL7VQH8922;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -761,7 +761,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Sources/SampleApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SampleApp/Preview Content\"";
 				DEVELOPMENT_TEAM = YL7VQH8922;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
