@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master  # Branch to run SPM
+      - develop
   pull_request:
     branches:
       - master
