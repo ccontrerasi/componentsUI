@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import componentsUI
+import ComponentsUI
 
 struct ContentView: View {
     @State var text: String = ""

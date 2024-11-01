@@ -1,7 +1,7 @@
 import XCTest
-@testable import componentsUI
+@testable import ComponentsUI
 
-final class componentsUITests: XCTestCase {
+final class ComponentsUITests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
