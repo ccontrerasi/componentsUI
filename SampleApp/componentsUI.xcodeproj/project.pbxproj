@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		892522DE2CFF299F0013457F /* ComponentsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 89A9204A2CD00C5300B1BC24 /* ComponentsUI */; };
+		892522E02CFF299F0013457F /* ComponentsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8950B5B32CD5436E00BEA6D2 /* ComponentsUI */; };
 		8950B5B92CD5445200BEA6D2 /* ComponentsUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8950B5A92CD542FF00BEA6D2 /* ComponentsUI */; };
 		8966E7ED2CD53BEE007835E6 /* SampleAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966E7EB2CD53BEE007835E6 /* SampleAppApp.swift */; };
 		8966E7EE2CD53BEE007835E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966E7EA2CD53BEE007835E6 /* ContentView.swift */; };
@@ -80,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				892522E02CFF299F0013457F /* ComponentsUI in Frameworks */,
+				892522DE2CFF299F0013457F /* ComponentsUI in Frameworks */,
 				8950B5B92CD5445200BEA6D2 /* ComponentsUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,7 +191,6 @@
 			name = SampleApp;
 			packageProductDependencies = (
 				89A9204A2CD00C5300B1BC24 /* ComponentsUI */,
-				8966E7F92CD53C57007835E6 /* componentsUI */,
 				8950B5A92CD542FF00BEA6D2 /* ComponentsUI */,
 				8950B5B32CD5436E00BEA6D2 /* ComponentsUI */,
 			);
@@ -546,7 +549,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SampleApp/Preview Content\"";
-				DEVELOPMENT_TEAM = YL7VQH8922;
+				DEVELOPMENT_TEAM = 6H2W2SBJZW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -579,7 +582,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SampleApp/Preview Content\"";
-				DEVELOPMENT_TEAM = YL7VQH8922;
+				DEVELOPMENT_TEAM = 6H2W2SBJZW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -768,10 +771,6 @@
 		8950B5B32CD5436E00BEA6D2 /* ComponentsUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ComponentsUI;
-		};
-		8966E7F92CD53C57007835E6 /* componentsUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = componentsUI;
 		};
 		89A9204A2CD00C5300B1BC24 /* ComponentsUI */ = {
 			isa = XCSwiftPackageProductDependency;
