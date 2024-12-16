@@ -1,4 +1,5 @@
 import SwiftUI
+import Swinject
 
 struct TextFieldStyle {
     var backgroundColor: Color
@@ -16,12 +17,13 @@ public enum TextFieldStyleType {
     case danger
 
     var style: TextFieldStyle {
+        let fontStyle = Container().resolve(FontStyleContract.self)
         switch self {
         case .primary:
             return TextFieldStyle(
                 backgroundColor: .white,
                 textColor: .black,
-                font: .body,
+                font: fontStyle?.body ?? .body,
                 cornerRadius: 10,
                 padding: 10,
                 borderColor: .blue,
@@ -31,7 +33,7 @@ public enum TextFieldStyleType {
             return TextFieldStyle(
                 backgroundColor: .gray.opacity(0.2),
                 textColor: .black,
-                font: .body,
+                font: fontStyle?.body ?? .body,
                 cornerRadius: 10,
                 padding: 10,
                 borderColor: .gray,
@@ -41,7 +43,7 @@ public enum TextFieldStyleType {
             return TextFieldStyle(
                 backgroundColor: .white,
                 textColor: .red,
-                font: .body,
+                font: fontStyle?.body ?? .body,
                 cornerRadius: 10,
                 padding: 10,
                 borderColor: .red,

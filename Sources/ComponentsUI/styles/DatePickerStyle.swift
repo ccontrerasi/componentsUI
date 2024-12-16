@@ -1,3 +1,4 @@
+import Swinject
 import SwiftUI
 
 public struct DatePickerStyle {
@@ -17,12 +18,13 @@ public enum DatePickerStyleType {
     case danger
 
     var style: DatePickerStyle {
+        let fontStyle = Container().resolve(FontStyleContract.self)
         switch self {
         case .primary:
             return DatePickerStyle(
                 backgroundColor: .white,
                 textColor: .black,
-                font: .body,
+                font: fontStyle?.body ?? .body,
                 cornerRadius: 10,
                 padding: 10,
                 borderColor: .blue,
@@ -32,7 +34,7 @@ public enum DatePickerStyleType {
             return DatePickerStyle(
                 backgroundColor: .gray.opacity(0.2),
                 textColor: .black,
-                font: .body,
+                font: fontStyle?.body ?? .body,
                 cornerRadius: 10,
                 padding: 10,
                 borderColor: .gray,
@@ -42,7 +44,7 @@ public enum DatePickerStyleType {
             return DatePickerStyle(
                 backgroundColor: .white,
                 textColor: .red,
-                font: .body,
+                font: fontStyle?.body ?? .body,
                 cornerRadius: 10,
                 padding: 10,
                 borderColor: .red,
