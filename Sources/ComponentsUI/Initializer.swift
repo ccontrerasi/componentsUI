@@ -1,6 +1,6 @@
 import Swinject
 public actor ComponentsUI {
-    static func initialize() {
+    public static func initialize() {
         let container = Container()
         container.register(FontStyleContract.self) { _ in FontStyle() }
     }
