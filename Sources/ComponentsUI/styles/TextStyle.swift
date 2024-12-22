@@ -22,7 +22,7 @@ public enum TextStyleType {
         switch self {
         case .head:
             return TextStyle(
-                color: .black, font: fontStyle?.headline ?? .headline
+                color: .black, font: fontStyle?.head ?? .headline
             )
         case .title:
             return TextStyle(
@@ -38,7 +38,7 @@ public enum TextStyleType {
             )
         case .headClear:
             return TextStyle(
-                color: .white, font: fontStyle?.headline ?? .headline
+                color: .white, font: fontStyle?.head ?? .headline
             )
         case .titleClear:
             return TextStyle(
