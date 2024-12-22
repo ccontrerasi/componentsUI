@@ -38,7 +38,7 @@ public enum TextStyleType {
             )
         case .headClear:
             return TextStyle(
-                color: .black, font: fontStyle?.headline ?? .headline
+                color: .white, font: fontStyle?.headline ?? .headline
             )
         case .titleClear:
             return TextStyle(
