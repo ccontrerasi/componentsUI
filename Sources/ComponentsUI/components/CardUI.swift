@@ -41,12 +41,14 @@ public struct CardUI: View {
             Text(title)
                 .font(.headline)
                 .padding(.top, 8)
+                .padding(.horizontal, 5)
                 .lineLimit(2)
             
             Text(subtitle)
                 .font(.subheadline)
                 .foregroundColor(.gray)
                 .padding(.bottom, 8)
+                .padding(.horizontal, 5)
                 .lineLimit(3)
         }
         .frame(width: cardStyle.style.width,

@@ -7,10 +7,12 @@ public struct TextStyle {
 }
 
 public enum TextStyleType {
+    case head
     case title
     case subtitle
     case body
     
+    case headClear
     case titleClear
     case subtitleClear
     case bodyClear
@@ -18,6 +20,10 @@ public enum TextStyleType {
     public var style: TextStyle {
         let fontStyle = Injector.shared.resolve(FontStyleContract.self)
         switch self {
+        case .head:
+            return TextStyle(
+                color: .black, font: fontStyle?.headline ?? .headline
+            )
         case .title:
             return TextStyle(
                 color: .black, font: fontStyle?.headline ?? .headline
@@ -29,6 +35,10 @@ public enum TextStyleType {
         case .body:
             return TextStyle(
                 color: .black, font: fontStyle?.body ?? .body
+            )
+        case .headClear:
+            return TextStyle(
+                color: .black, font: fontStyle?.headline ?? .headline
             )
         case .titleClear:
             return TextStyle(

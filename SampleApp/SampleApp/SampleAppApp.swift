@@ -26,5 +26,6 @@ class CustomFontStyle: FontStyle {
         super.init()
         self.headline = Font.custom("RockSalt-Regular", size: 16)
         self.body = Font.custom("RockSalt-Regular", size: 8)
+        self.head = Font.custom("RockSalt-Regular", size: 32)
     }
 }
