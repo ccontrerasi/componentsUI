@@ -14,6 +14,21 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
+            HStack {
+                TextUI(text: "Ey man!", type: .title)
+                TextUI(text: "Ey man!", type: .subtitle)
+                TextUI(text: "Ey man!", type: .body)
+            }.frame(width: .infinity)
+                .padding(.top, 25)
+            HStack {
+                Spacer()
+                TextUI(text: "Ey man!", type: .titleClear)
+                TextUI(text: "Ey man!", type: .subtitleClear)
+                TextUI(text: "Ey man!", type: .bodyClear)
+                Spacer()
+            }
+            .frame(width: .infinity)
+            .background(.red)
             ButtonUI(title: "asdfasdf",
                      type: .danger,
                      action: {

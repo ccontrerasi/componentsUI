@@ -24,6 +24,7 @@ struct SampleAppApp: App {
 class CustomFontStyle: FontStyle {
     override init() {
         super.init()
-        self.body = Font.custom("RockSalt-Regular", size: 12)
+        self.headline = Font.custom("RockSalt-Regular", size: 16)
+        self.body = Font.custom("RockSalt-Regular", size: 8)
     }
 }
