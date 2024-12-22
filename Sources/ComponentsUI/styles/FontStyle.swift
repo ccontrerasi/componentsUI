@@ -7,8 +7,14 @@ public protocol FontStyleContract {
     var subheadline: Font { get }
 }
 
-final class FontStyle: FontStyleContract {
-    var body: Font = .body
-    var headline: Font = .headline
-    var subheadline: Font = .subheadline
+open class FontStyle: FontStyleContract {
+    open var body: Font
+    open var headline: Font
+    open var subheadline: Font
+    
+    public init() {
+        body = .body
+        headline = .headline
+        subheadline = .subheadline
+    }
 }

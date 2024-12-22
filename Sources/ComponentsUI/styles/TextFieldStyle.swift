@@ -17,7 +17,7 @@ public enum TextFieldStyleType {
     case danger
 
     var style: TextFieldStyle {
-        let fontStyle = Container().resolve(FontStyleContract.self)
+        let fontStyle = Injector.shared.resolve(FontStyleContract.self)
         switch self {
         case .primary:
             return TextFieldStyle(

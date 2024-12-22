@@ -14,7 +14,7 @@ public enum ButtonStyleType {
     case danger
 
     public var style: ButtonStyle {
-        let fontStyle = Container().resolve(FontStyleContract.self)
+        let fontStyle = Injector.shared.resolve(FontStyleContract.self)
         switch self {
         case .primary:
             return ButtonStyle(

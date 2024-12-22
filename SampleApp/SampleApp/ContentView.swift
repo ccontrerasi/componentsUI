@@ -32,6 +32,26 @@ struct ContentView: View {
             DatePickerUI(title: "Primary DatePicker", date: $date, styleType: .primary)
             DatePickerUI(title: "Secondary DatePicker", date: $date, styleType: .secondary)
             DatePickerUI(title: "Danger DatePicker", date: $date, styleType: .danger)
+            ScrollView(.horizontal) {
+                HStack {
+                    CardUI(title: "Tiki",
+                           subtitle: "Tururu",
+                           image: nil,
+                           alternativeText: nil,
+                           cardStyle: .normal)
+                    CardUI(title: "Tiki",
+                           subtitle: "Tururu",
+                           image: nil,
+                           alternativeText: nil,
+                           cardStyle: .normal)
+                    CardUI(title: "Tiki",
+                           subtitle: "Tururu",
+                           image: nil,
+                           alternativeText: nil,
+                           cardStyle: .normal)
+                }
+            }
+            .padding(.horizontal, .zero)
         }
         .padding()
     }

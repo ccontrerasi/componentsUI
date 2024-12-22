@@ -18,7 +18,7 @@ public enum DatePickerStyleType {
     case danger
 
     var style: DatePickerStyle {
-        let fontStyle = Container().resolve(FontStyleContract.self)
+        let fontStyle = Injector.shared.resolve(FontStyleContract.self)
         switch self {
         case .primary:
             return DatePickerStyle(

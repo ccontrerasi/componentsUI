@@ -5,18 +5,20 @@ public struct CardUI: View {
     var subtitle: String
     var image: Image?
     var alternativeText: String?
-    
+    var cardStyle: CardStyleType
     var action: () -> Void
     
     public init(title: String,
                 subtitle: String,
                 image: Image?,
                 alternativeText: String?,
+                cardStyle: CardStyleType = .normal,
                 action: @escaping () -> Void = {}) {
         self.title = title
         self.subtitle = subtitle
         self.image = image
         self.alternativeText = alternativeText
+        self.cardStyle = cardStyle
         self.action = action
     }
     
@@ -26,10 +28,13 @@ public struct CardUI: View {
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .frame(width: cardStyle.style.imageWidth,
+                           height: cardStyle.style.imageHeight)
                     .padding()
             } else if let alternativeText {
                 alternativeTextView(text: alternativeText)
-                    .frame(width: 50, height: 50)
+                    .frame(width: cardStyle.style.imageWidth,
+                           height: cardStyle.style.imageHeight)
                     .padding(.top, 8)
             }
             
@@ -44,8 +49,10 @@ public struct CardUI: View {
                 .padding(.bottom, 8)
                 .lineLimit(3)
         }
-        .background(Color.white)
-        .cornerRadius(10)
+        .frame(width: cardStyle.style.width,
+               height: cardStyle.style.height)
+        .background(cardStyle.style.backgroundColor)
+        .cornerRadius(cardStyle.style.cornerRadius)
         .shadow(radius: 5)
         .padding()
         .onTapGesture {
@@ -82,6 +89,6 @@ struct CardUI_Previews: PreviewProvider {
                alternativeText: "AC"
         ){
             print("Eooo")
-        }.frame(width: 200)
+        }
     }
 }
