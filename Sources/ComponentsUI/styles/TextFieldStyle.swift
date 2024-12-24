@@ -3,6 +3,7 @@ import Swinject
 
 struct TextFieldStyle {
     var backgroundColor: Color
+    var shimmerColor: Color
     var textColor: Color
     var font: Font
     var cornerRadius: CGFloat
@@ -22,6 +23,7 @@ public enum TextFieldStyleType {
         case .primary:
             return TextFieldStyle(
                 backgroundColor: .white,
+                shimmerColor: Color.gray.opacity(0.3),
                 textColor: .black,
                 font: fontStyle?.body ?? .body,
                 cornerRadius: 10,
@@ -32,6 +34,7 @@ public enum TextFieldStyleType {
         case .secondary:
             return TextFieldStyle(
                 backgroundColor: .gray.opacity(0.2),
+                shimmerColor: Color.gray.opacity(0.3),
                 textColor: .black,
                 font: fontStyle?.body ?? .body,
                 cornerRadius: 10,
@@ -42,6 +45,7 @@ public enum TextFieldStyleType {
         case .danger:
             return TextFieldStyle(
                 backgroundColor: .white,
+                shimmerColor: Color.red.opacity(0.3),
                 textColor: .red,
                 font: fontStyle?.body ?? .body,
                 cornerRadius: 10,

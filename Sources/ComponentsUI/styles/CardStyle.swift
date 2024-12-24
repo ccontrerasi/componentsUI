@@ -3,6 +3,7 @@ import Swinject
 
 public struct CardStyle {
     var backgroundColor: Color
+    var shimmerColor: Color
     var textColor: Color
     var titleFont: Font
     var subtitleFont: Font
@@ -22,12 +23,13 @@ public enum CardStyleType {
         case .normal:
             return CardStyle(
                 backgroundColor: .white,
+                shimmerColor: Color.gray.opacity(0.3),
                 textColor: .black,
                 titleFont: fontStyle?.headline ?? .headline,
                 subtitleFont: fontStyle?.headline ?? .headline,
                 cornerRadius: 10,
-                imageWidth: 50,
-                imageHeight: 50,
+                imageWidth: 75,
+                imageHeight: 75,
                 width: 200,
                 height: 200
             )

@@ -3,6 +3,7 @@ import SwiftUI
 
 public struct DatePickerStyle {
     var backgroundColor: Color
+    var shimmerColor: Color
     var textColor: Color
     var font: Font
     var cornerRadius: CGFloat
@@ -23,6 +24,7 @@ public enum DatePickerStyleType {
         case .primary:
             return DatePickerStyle(
                 backgroundColor: .white,
+                shimmerColor: Color.gray.opacity(0.3),
                 textColor: .black,
                 font: fontStyle?.body ?? .body,
                 cornerRadius: 10,
@@ -33,6 +35,7 @@ public enum DatePickerStyleType {
         case .secondary:
             return DatePickerStyle(
                 backgroundColor: .gray.opacity(0.2),
+                shimmerColor: Color.gray.opacity(0.3),
                 textColor: .black,
                 font: fontStyle?.body ?? .body,
                 cornerRadius: 10,
@@ -43,6 +46,7 @@ public enum DatePickerStyleType {
         case .danger:
             return DatePickerStyle(
                 backgroundColor: .white,
+                shimmerColor: Color.red.opacity(0.3),
                 textColor: .red,
                 font: fontStyle?.body ?? .body,
                 cornerRadius: 10,

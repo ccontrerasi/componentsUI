@@ -3,6 +3,7 @@ import Swinject
 
 public struct ButtonStyle {
     var backgroundColor: Color
+    var shimmerColor: Color
     var textColor: Color
     var font: Font
     var cornerRadius: CGFloat
@@ -19,6 +20,7 @@ public enum ButtonStyleType {
         case .primary:
             return ButtonStyle(
                 backgroundColor: .blue,
+                shimmerColor: Color.gray.opacity(0.3),
                 textColor: .white,
                 font: fontStyle?.headline ?? .headline,
                 cornerRadius: 10
@@ -26,6 +28,7 @@ public enum ButtonStyleType {
         case .secondary:
             return ButtonStyle(
                 backgroundColor: .gray,
+                shimmerColor: Color.gray.opacity(0.3),
                 textColor: .white,
                 font: fontStyle?.subheadline ?? .subheadline,
                 cornerRadius: 10
@@ -33,6 +36,7 @@ public enum ButtonStyleType {
         case .danger:
             return ButtonStyle(
                 backgroundColor: .red,
+                shimmerColor: Color.red.opacity(0.3),
                 textColor: .white,
                 font: fontStyle?.headline ?? .headline,
                 cornerRadius: 10
