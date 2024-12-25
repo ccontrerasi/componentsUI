@@ -1,11 +1,11 @@
 import SwiftUI
 
-struct LoadingViewUI: View {
+public struct LoadingViewUI: View {
     @State private var isAnimating: Bool = false
     var title: String
     var type: LoadingViewStyleType
     
-    var body: some View {
+    public var body: some View {
         VStack {
             ZStack {
                 Circle()
