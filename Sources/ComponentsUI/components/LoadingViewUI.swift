@@ -5,6 +5,14 @@ public struct LoadingViewUI: View {
     var title: String
     var type: LoadingViewStyleType
     
+    public init(isAnimating: Bool,
+                title: String,
+                type: LoadingViewStyleType) {
+        self.isAnimating = isAnimating
+        self.title = title
+        self.type = type
+    }
+    
     public var body: some View {
         VStack {
             ZStack {
