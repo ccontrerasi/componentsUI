@@ -5,9 +5,9 @@ public struct LoadingViewUI: View {
     var title: String
     var type: LoadingViewStyleType
     
-    public init(isAnimating: Bool,
-                title: String,
-                type: LoadingViewStyleType) {
+    public init(isAnimating: Bool = false,
+                title: String = "Loading",
+                type: LoadingViewStyleType = .primary) {
         self.isAnimating = isAnimating
         self.title = title
         self.type = type
