@@ -13,8 +13,10 @@ struct ShimmeringViewModifier: ViewModifier {
                             .frame(width: geometry.size.width * 1.5, height: geometry.size.height)
                             .opacity(opacity)
                             .onAppear {
+                                DispatchQueue.main.async {
                                 withAnimation(Animation.easeInOut(duration: 1.0).repeatForever(autoreverses: true)) {
-                                    self.opacity = 1.0
+                                        self.opacity = 1.0
+                                    }
                                 }
                             }
                     }
