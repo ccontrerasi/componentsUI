@@ -21,10 +21,11 @@ public struct LoadingViewUI: View {
                     .stroke(type.style.strokeColor, lineWidth: type.style.strokeWidth)
                     .frame(width: type.style.size, height: type.style.size)
                     .rotationEffect(Angle(degrees: isAnimating ? 360 : 0))
-                    .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
                     .onAppear {
                         DispatchQueue.main.async {
-                            self.isAnimating = true
+                            withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)){
+                                self.isAnimating = true
+                            }
                         }
                     }.padding(8)
                 Text(title)
