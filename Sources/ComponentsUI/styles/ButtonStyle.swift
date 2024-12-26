@@ -13,10 +13,23 @@ public enum ButtonStyleType {
     case primary
     case secondary
     case danger
+    
+    var style: ButtonStyle {
+        guard let factory = Injector.shared.resolve(ButtonStyleFactoryContract.self) else {
+            return ButtonStyleFactory().getStyle(self)
+        }
+        return factory.getStyle(self)
+    }
+}
 
-    public var style: ButtonStyle {
+public protocol ButtonStyleFactoryContract {
+    func getStyle(_ type: ButtonStyleType) -> ButtonStyle
+}
+
+final class ButtonStyleFactory: ButtonStyleFactoryContract {
+    func getStyle(_ type: ButtonStyleType) -> ButtonStyle {
         let fontStyle = Injector.shared.resolve(FontStyleContract.self)
-        switch self {
+        switch type {
         case .primary:
             return ButtonStyle(
                 backgroundColor: .blue,

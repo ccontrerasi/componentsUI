@@ -21,29 +21,26 @@ struct ContentView: View {
                             TextUI(text: "Ey man!", type: .title)
                             TextUI(text: "Ey man!", type: .subtitle)
                             TextUI(text: "Ey man!", type: .body)
-                        }.frame(width: .infinity)
-                            .padding(.top, 25)
+                        }.padding(.top, 25)
                         HStack {
-                            Spacer()
                             TextUI(text: "Ey man!", type: .titleClear)
                             TextUI(text: "Ey man!", type: .subtitleClear)
                             TextUI(text: "Ey man!", type: .bodyClear)
-                            Spacer()
+                        }.background(.red)
+                        HStack {
+                            ButtonUI(title: "asdfasdf",
+                                     type: .danger,
+                                     action: {
+                                print("Hola caracola")
+                            })
+                            ButtonUI(title: "asdfasdf",
+                                     type: .primary,
+                                     icon: Image(systemName: "star"),
+                                     iconColor: .white,
+                                     action: {
+                                print("Hola caracola")
+                            })
                         }
-                        .frame(width: .infinity)
-                        .background(.red)
-                        ButtonUI(title: "asdfasdf",
-                                 type: .danger,
-                                 action: {
-                            print("Hola caracola")
-                        })
-                        ButtonUI(title: "asdfasdf",
-                                 type: .primary,
-                                 icon: Image(systemName: "star"),
-                                 iconColor: .white,
-                                 action: {
-                            print("Hola caracola")
-                        })
                         TextFieldUI(placeholder: "Primary", text: $text, styleType: .primary)
                         TextFieldUI(placeholder: "Secondary", text: $text, styleType: .secondary)
                         TextFieldUI(placeholder: "Danger", text: $text, styleType: .danger)

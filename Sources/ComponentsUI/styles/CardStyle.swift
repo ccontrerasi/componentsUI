@@ -18,8 +18,21 @@ public enum CardStyleType {
     case normal
     
     public var style: CardStyle {
+        guard let factory = Injector.shared.resolve(CardStyleFactoryContract.self) else {
+            return CardStyleFactory().getStyle(self)
+        }
+        return factory.getStyle(self)
+    }
+}
+
+public protocol CardStyleFactoryContract {
+    func getStyle(_ type: CardStyleType) -> CardStyle
+}
+
+final class CardStyleFactory: CardStyleFactoryContract {
+    func getStyle(_ type: CardStyleType) -> CardStyle {
         let fontStyle = Injector.shared.resolve(FontStyleContract.self)
-        switch self {
+        switch type {
         case .normal:
             return CardStyle(
                 backgroundColor: .white,
@@ -36,3 +49,4 @@ public enum CardStyleType {
         }
     }
 }
+

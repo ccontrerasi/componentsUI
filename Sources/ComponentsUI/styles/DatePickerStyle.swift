@@ -19,8 +19,22 @@ public enum DatePickerStyleType {
     case danger
 
     var style: DatePickerStyle {
+        guard let factory = Injector.shared.resolve(DataPickerStyleFactoryContract.self) else {
+            return DataPickerStyleFactory().getStyle(self)
+        }
+        return factory.getStyle(self)
+    }
+}
+
+
+public protocol DataPickerStyleFactoryContract {
+    func getStyle(_ type: DatePickerStyleType) -> DatePickerStyle
+}
+
+final class DataPickerStyleFactory: DataPickerStyleFactoryContract {
+    func getStyle(_ type: DatePickerStyleType) -> DatePickerStyle {
         let fontStyle = Injector.shared.resolve(FontStyleContract.self)
-        switch self {
+        switch type {
         case .primary:
             return DatePickerStyle(
                 backgroundColor: .white,

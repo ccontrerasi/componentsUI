@@ -15,8 +15,21 @@ public enum LoadingViewStyleType {
     case primary
     
     public var style: LoadingViewStyle {
+        guard let factory = Injector.shared.resolve(LoadingViewStyleFactoryContract.self) else {
+            return LoadingViewStyleFactory().getStyle(self)
+        }
+        return factory.getStyle(self)
+    }
+}
+
+public protocol LoadingViewStyleFactoryContract {
+    func getStyle(_ type: LoadingViewStyleType) -> LoadingViewStyle
+}
+
+final class LoadingViewStyleFactory: LoadingViewStyleFactoryContract {
+    func getStyle(_ type: LoadingViewStyleType) -> LoadingViewStyle {
         let fontStyle = Injector.shared.resolve(FontStyleContract.self)
-        switch self {
+        switch type {
         case .primary:
             return LoadingViewStyle(strokeColor: .black,
                                     strokeWidth: 2,

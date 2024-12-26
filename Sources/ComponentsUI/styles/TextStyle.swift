@@ -20,8 +20,21 @@ public enum TextStyleType {
     case bodyClear
 
     public var style: TextStyle {
+        guard let factory = Injector.shared.resolve(TextStyleFactoryContract.self) else {
+            return TextStyleFactory().getStyle(self)
+        }
+        return factory.getStyle(self)
+    }
+}
+
+public protocol TextStyleFactoryContract {
+    func getStyle(_ type: TextStyleType) -> TextStyle
+}
+
+final class TextStyleFactory: TextStyleFactoryContract {
+    func getStyle(_ type: TextStyleType) -> TextStyle {
         let fontStyle = Injector.shared.resolve(FontStyleContract.self)
-        switch self {
+        switch type {
         case .head:
             return TextStyle(
                 color: .black,

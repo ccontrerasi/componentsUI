@@ -1,7 +1,7 @@
 import SwiftUI
 import Swinject
 
-struct TextFieldStyle {
+public struct TextFieldStyle {
     var backgroundColor: Color
     var shimmerColor: Color
     var textColor: Color
@@ -18,8 +18,21 @@ public enum TextFieldStyleType {
     case danger
 
     var style: TextFieldStyle {
+        guard let factory = Injector.shared.resolve(TextFieldStyleFactoryContract.self) else {
+            return TextFieldStyleFactory().getStyle(self)
+        }
+        return factory.getStyle(self)
+    }
+}
+
+public protocol TextFieldStyleFactoryContract {
+    func getStyle(_ type: TextFieldStyleType) -> TextFieldStyle
+}
+
+final class TextFieldStyleFactory: TextFieldStyleFactoryContract {
+    func getStyle(_ type: TextFieldStyleType) -> TextFieldStyle {
         let fontStyle = Injector.shared.resolve(FontStyleContract.self)
-        switch self {
+        switch type {
         case .primary:
             return TextFieldStyle(
                 backgroundColor: .white,

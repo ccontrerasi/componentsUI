@@ -16,6 +16,12 @@ public class Injector: InjectorContract {
         logger.debug("[ComponentsUI] Called to init")
         container = Container()
         register(FontStyleContract.self, FontStyle())
+        register(ButtonStyleFactory.self, ButtonStyleFactory())
+        register(CardStyleFactoryContract.self, CardStyleFactory())
+        register(DataPickerStyleFactoryContract.self, DataPickerStyleFactory())
+        register(LoadingViewStyleFactoryContract.self, LoadingViewStyleFactory())
+        register(TextFieldStyleFactoryContract.self, TextFieldStyleFactory())
+        register(TextStyleFactoryContract.self, TextStyleFactory())
     }
     
     public func resolve<Service>(_ serviceType: Service.Type) -> Service? {
